@@ -60,7 +60,7 @@ const signin = async (req, res) => {
             });
         }
 
-        const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+        const token = jwt.sign({ id: user._id , name : user.name }, process.env.JWT_SECRET, {
             expiresIn: "1h",
         });
 
