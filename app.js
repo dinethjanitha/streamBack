@@ -15,7 +15,7 @@ app.use(morgan("dev"));
 app.use(experss.json());
 
 const corsOptions = {
-  origin: "http://localhost:3000",
+  origin: ["http://localhost:3000", "https://mystreamsite.vercel.app/" ],
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
