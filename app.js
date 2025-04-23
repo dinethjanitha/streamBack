@@ -6,6 +6,7 @@ import { userRouters } from "./Route/UserRoute.js";
 import cors from "cors";
 import { streamRoute } from "./Route/StreamRoute.js";
 import path from "path";
+import contactRouter from "./Route/ContactRoute.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -16,7 +17,7 @@ app.use(experss.json());
 
 const corsOptions = {
   origin: ["http://localhost:3000", "https://mystreamsite.vercel.app" ],
-  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  methods: ["GET", "POST",],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
 };
@@ -27,5 +28,7 @@ app.use(cors(corsOptions));
 
 app.use("/api/v1", userRouters);
 app.use("/api/v1", streamRoute);
+app.use("/api/v1/" , contactRouter)
+
 
 export default app;
