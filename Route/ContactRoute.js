@@ -6,3 +6,5 @@ const contactRouter = express.Router();
 contactRouter.route("/contact").post(createMessage).get(getAllMessages)
 
 export default contactRouter
+
+//test
